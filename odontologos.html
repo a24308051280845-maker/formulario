@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>DENTISTADG - Odontólogos</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f7f9; color: #333; display: flex; min-height: 100vh; flex-direction: column; }
+        header { background-color: white; padding: 20px; text-align: center; border-bottom: 5px solid #0077b6; width: 100%; box-sizing: border-box; }
+        .logo-negocio { width: 120px; height: auto; display: block; margin: 0 auto 10px auto; border-radius: 50%; }
+        h1 { color: #0077b6; margin: 5px 0; }
+        
+        /* Contenedor Grid de 3 columnas */
+        .sitio-wrapper { display: grid; grid-template-columns: 220px 1fr 400px; gap: 20px; flex: 1; padding: 20px; box-sizing: border-box; }
+        
+        /* Columna Izquierda: Menú Lateral */
+        nav { background-color: #0077b6; padding: 25px 10px; display: flex; flex-direction: column; gap: 12px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); align-self: flex-start; }
+        nav a { color: white; text-decoration: none; padding: 12px 15px; font-weight: bold; text-transform: uppercase; border-radius: 6px; transition: all 0.3s ease; font-size: 13px; display: block; }
+        nav a:hover, nav a.activo { background-color: #005f92; color: #caf0f8; padding-left: 22px; }
+        
+        /* Columna Central: Contenido / Tabla */
+        .contenido-centro { background-color: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); align-self: flex-start; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #0077b6; color: white; text-transform: uppercase; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f1faff; }
+        
+        /* Columna Derecha: Formulario */
+        .formulario-derecha { background-color: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-top: 6px solid #0077b6; align-self: flex-start; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; color: #0077b6; font-size: 13px; }
+        input[type="text"], input[type="number"], input[type="date"] { width: 100%; padding: 10px; border: 2px solid #caf0f8; border-radius: 6px; font-size: 14px; background-color: #f8fbfd; color: #333; box-sizing: border-box; }
+        input:focus { outline: none; border-color: #0077b6; box-shadow: 0 0 6px rgba(0, 119, 182, 0.2); }
+        .btn-submit { background-color: #0077b6; color: white; border: none; padding: 12px 20px; width: 100%; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease; margin-top: 10px; }
+        .btn-submit:hover { background-color: #005f92; }
+        
+        footer { background-color: #222; color: white; text-align: center; padding: 20px; width: 100%; box-sizing: border-box; margin-top: auto; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo de DENTISTADG" class="logo-negocio">
+        <h1>DENTISTADG</h1>
+        <p>Control de Personal Médico</p>
+    </header>
+
+    <div class="sitio-wrapper">
+        <!-- Columna Izquierda -->
+        <nav>
+            <a href="dagv-dentista.html">Inicio</a>
+            <a href="odontologos.html" class="activo">Odontólogos</a>
+            <a href="pacientes.html">Pacientes</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="citas.html">Citas</a>
+            <a href="pagos.html">Pagos</a>
+        </nav>
+
+        <!-- Columna Central -->
+        <main class="contenido-centro">
+            <h2 style="color: #0077b6; text-align: center; margin-top: 0;">Base de Datos de Odontólogos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Odontólogo</th>
+                        <th>Nombre Completo</th>
+                        <th>Especialidad</th>
+                        <th>Turno</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>001</td><td>Dr. Alejandro Gómez</td><td>Odontólogo General</td><td>Matutino</td></tr>
+                    <tr><td>002</td><td>Dra. Sofia Villa</td><td>Ortodoncista</td><td>Vespertino</td></tr>
+                    <tr><td>003</td><td>Dr. Eduardo Valdés</td><td>Cirujano Dentista</td><td>Matutino</td></tr>
+                    <tr><td>004</td><td>Dra. Iris Quiñones</td><td>Odontopediatra</td><td>Vespertino</td></tr>
+                    <tr><td>005</td><td>Dr. Emilio Hernández</td><td>Endodoncista</td><td>Matutino</td></tr>
+                </tbody>
+            </table>
+        </main>
+
+        <!-- Columna Derecha -->
+        <aside class="formulario-derecha">
+            <h3 style="color: #0077b6; border-bottom: 2px solid #caf0f8; padding-bottom: 10px; margin-top: 0;">Alta de Odontólogos</h3>
+            <form action="odontologos.html" method="POST">
+                <div class="form-group"><label>ID Odontólogo:</label><input type="number" required></div>
+                <div class="form-group"><label>Nombre Completo:</label><input type="text" required></div>
+                <div class="form-group"><label>Especialidad:</label><input type="text" required></div>
+                <div class="form-group"><label>Turno:</label><input type="text" required></div>
+                <button type="submit" class="btn-submit">Registrar Odontólogo</button>
+            </form>
+        </aside>
+    </div>
+
+    <footer>
+        <p><strong>Alumno:</strong> Diego Alejandro Gomez Vazquez | No. de Control: 24308051280845 | 4-J Programación</p>
+    </footer>
+</body>
+</html>

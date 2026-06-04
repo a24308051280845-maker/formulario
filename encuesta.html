@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta de Pacientes - DENTISTADG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f0f4f8; 
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        
+        /* Contenedor estructural idéntico al inicio */
+        .sitio-wrapper {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+        }
+
+        header { 
+            background-color: white; 
+            padding: 20px; 
+            text-align: center; 
+            border-bottom: 5px solid #0077b6; 
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 { 
+            color: #0077b6; 
+            margin: 5px 0; 
+            font-size: 35px; 
+            text-transform: uppercase;
+        }
+        
+        .descripcion { 
+            max-width: 700px; 
+            margin: 0 auto; 
+            line-height: 1.6; 
+            color: #444;
+            font-size: 17px;
+        }
+
+        /* Barra lateral izquierda idéntica al inicio */
+        nav { 
+            background-color: #0077b6; 
+            width: 220px; 
+            padding: 30px 10px; 
+            display: flex;
+            flex-direction: column; 
+            gap: 12px; 
+            box-sizing: border-box;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+        
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 12px 15px;
+            font-weight: bold; 
+            text-transform: uppercase;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            display: block;
+        }
+        
+        nav a:hover { 
+            background-color: #005f92; 
+            color: #ade8f4; 
+            padding-left: 22px; 
+            text-decoration: none;
+        }
+
+        /* El contenedor derecho ahora alberga tu formulario de encuesta */
+        .cuerpo { 
+            background-color: white; 
+            flex: 1; 
+            margin: 30px; 
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            align-self: flex-start;
+            max-width: 600px; /* Limitamos el ancho para que el formulario no se deforme */
+            width: 100%;
+        }
+
+        h2 { 
+            color: #0077b6; 
+            border-bottom: 2px solid #caf0f8;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #0077b6;
+            font-size: 14px;
+        }
+        
+        input[type="text"], input[type="number"], input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #bde0fe;
+            border-radius: 8px;
+            font-family: "Poppins", sans-serif;
+            font-size: 15px;
+            background-color: #f8fbfd;
+            color: #333;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #0077b6;
+            background-color: #fff;
+            box-shadow: 0 0 8px rgba(0, 119, 182, 0.3);
+        }
+
+        .btn-submit {
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            padding: 16px 20px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: "Poppins", sans-serif;
+            margin-top: 15px;
+        }
+
+        .btn-submit:hover {
+            background-color: #005f92;
+        }
+
+        footer { 
+            background-color: #222; 
+            color: white; 
+            text-align: center; 
+            padding: 25px; 
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: auto; 
+        }
+        
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>DENTISTADG</h1>
+        <p class="descripcion">
+            En <strong>DENTISTADG</strong>, nos preocupamos por tu salud bucal y la de tu familia. 
+            Somos una clínica dental comprometida con brindar la mejor atención odontológica.
+        </p>
+    </header>
+
+    <div class="sitio-wrapper">
+        <nav>
+            <a href="dagv-dentista.html">Inicio</a>
+            <a href="odontologos.html">Odontólogos</a>
+            <a href="encuesta.html">Pacientes</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="citas.html">Citas</a>
+            <a href="pagos.html">Pagos</a>
+        </nav>
+
+        <main class="cuerpo">
+            <h2>Alta de Pacientes</h2>
+            <form action="encuesta.html" method="POST">
+                <div class="form-group">
+                    <label for="id_paciente">ID del Paciente:</label>
+                    <input type="number" id="id_paciente" name="id_paciente" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Ej: Pérez" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="sexo">Sexo:</label>
+                    <input type="text" id="sexo" name="sexo" placeholder="Ej: Femenino" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" placeholder="Ej: 21" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="number" id="telefono" name="telefono" placeholder="Ej: 555555" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha_nac">Fecha de Nacimiento:</label>
+                    <input type="date" id="fecha_nac" name="fecha_nac" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" placeholder="Ej: Calle Azul, #2376" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Dar de alta al Paciente</button>
+            </form>
+        </main>
+    </div>
+
+    <footer>
+        <p><strong>Alumno:</strong> Diego Alejandro Gomez Vazquez</p>
+        <p><strong>No. de Control:</strong> 24308051280845</p>
+        <p><strong>4to Semestre - 4-J Programación</strong></p>
+    </footer>
+
+</body>
+</html>

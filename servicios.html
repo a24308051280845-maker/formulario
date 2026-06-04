@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>DENTISTADG - Catálogo de Servicios</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f7f9; color: #333; display: flex; min-height: 100vh; flex-direction: column; }
+        header { background-color: white; padding: 20px; text-align: center; border-bottom: 5px solid #0077b6; width: 100%; box-sizing: border-box; }
+        .logo-negocio { width: 120px; height: auto; display: block; margin: 0 auto 10px auto; border-radius: 50%; }
+        h1 { color: #0077b6; margin: 5px 0; }
+        
+        /* Contenedor Grid de 3 columnas */
+        .sitio-wrapper { display: grid; grid-template-columns: 220px 1fr 400px; gap: 20px; flex: 1; padding: 20px; box-sizing: border-box; }
+        
+        /* Columna Izquierda: Menú Lateral */
+        nav { background-color: #0077b6; padding: 25px 10px; display: flex; flex-direction: column; gap: 12px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); align-self: flex-start; }
+        nav a { color: white; text-decoration: none; padding: 12px 15px; font-weight: bold; text-transform: uppercase; border-radius: 6px; transition: all 0.3s ease; font-size: 13px; display: block; }
+        nav a:hover, nav a.activo { background-color: #005f92; color: #caf0f8; padding-left: 22px; }
+        
+        /* Columna Central: Contenido / Tabla */
+        .contenido-centro { background-color: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); align-self: flex-start; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #0077b6; color: white; text-transform: uppercase; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f1faff; }
+        
+        /* Columna Derecha: Formulario */
+        .formulario-derecha { background-color: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-top: 6px solid #0077b6; align-self: flex-start; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; color: #0077b6; font-size: 13px; }
+        input[type="text"], input[type="number"], input[type="date"] { width: 100%; padding: 10px; border: 2px solid #caf0f8; border-radius: 6px; font-size: 14px; background-color: #f8fbfd; color: #333; box-sizing: border-box; }
+        input:focus { outline: none; border-color: #0077b6; box-shadow: 0 0 6px rgba(0, 119, 182, 0.2); }
+        .btn-submit { background-color: #0077b6; color: white; border: none; padding: 12px 20px; width: 100%; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease; margin-top: 10px; }
+        .btn-submit:hover { background-color: #005f92; }
+        
+        footer { background-color: #222; color: white; text-align: center; padding: 20px; width: 100%; box-sizing: border-box; margin-top: auto; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo de DENTISTADG" class="logo-negocio">
+        <h1>DENTISTADG</h1>
+        <p>Catálogo Oficial de Tratamientos y Costos</p>
+    </header>
+
+    <div class="sitio-wrapper">
+        <!-- Columna Izquierda -->
+        <nav>
+            <a href="dagv-dentista.html">Inicio</a>
+            <a href="odontologos.html">Odontólogos</a>
+            <a href="pacientes.html">Pacientes</a>
+            <a href="servicios.html" class="activo">Servicios</a>
+            <a href="citas.html">Citas</a>
+            <a href="pagos.html">Pagos</a>
+        </nav>
+
+        <!-- Columna Central -->
+        <main class="contenido-centro">
+            <h2 style="color: #0077b6; text-align: center; margin-top: 0;">Lista de Servicios Disponibles</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Servicio / Tratamiento</th>
+                        <th>Tipo de Odontólogo</th>
+                        <th>Costo</th>
+                        <th>Duración Aproximada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>S001</td><td>Limpieza Dental (Profilaxis general)</td><td>Odontólogo general</td><td>$600</td><td>45 minutos</td></tr>
+                    <tr><td>S002</td><td>Resina (Restauración estética)</td><td>Odontólogo general / Odontólogo estético</td><td>$800</td><td>60 minutos</td></tr>
+                    <tr><td>S003</td><td>Extracción simple (Extracción de pieza dental)</td><td>Cirujano dentista / Odontólogo general</td><td>$900</td><td>40 minutos</td></tr>
+                    <tr><td>S004</td><td>Blanqueamiento dental (Aclaramiento estético)</td><td>Odontólogo estético</td><td>$2,500</td><td>90 minutos</td></tr>
+                    <tr><td>S005</td><td>Ortodoncia mensual (Ajuste de Brackets)</td><td>Ortodoncista</td><td>$1,200</td><td>30 minutos</td></tr>
+                    <tr><td>S006</td><td>Endodoncia (Tratamiento de conducto)</td><td>Endodoncisca</td><td>$3,500</td><td>120 minutos</td></tr>
+                    <tr><td>S007</td><td>Radiografía dental (Estudio radiográfico)</td><td>Odontólogo general / Radiólogo dental</td><td>$300</td><td>15 minutos</td></tr>
+                    <tr><td>S008</td><td>Selladores (Prevención de caries)</td><td>Odontólogo general / Odontopediatra</td><td>$700</td><td>30 minutos</td></tr>
+                    <tr><td>S009</td><td>Prótesis removible (Colocación de prótesis parcial)</td><td>Prostodoncista</td><td>$4,500</td><td>150 minutos</td></tr>
+                    <tr><td>S010</td><td>Consulta General (Revisión y diagnóstico)</td><td>Odontólogo general</td><td>$500</td><td>30 minutos</td></tr>
+                </tbody>
+            </table>
+        </main>
+
+        <!-- Columna Derecha -->
+        <aside class="formulario-derecha">
+            <h3 style="color: #0077b6; border-bottom: 2px solid #caf0f8; padding-bottom: 10px; margin-top: 0;">Alta de Servicios</h3>
+            <form action="servicios.html" method="POST">
+                <div class="form-group"><label>Código del Servicio:</label><input type="text" required></div>
+                <div class="form-group"><label>Servicio / Tratamiento:</label><input type="text" required></div>
+                <div class="form-group"><label>Costo ($):</label><input type="number" required></div>
+                <div class="form-group"><label>Duración Aproximada:</label><input type="text" required></div>
+                <button type="submit" class="btn-submit">Registrar Servicio</button>
+            </form>
+        </aside>
+    </div>
+
+    <footer>
+        <p><strong>Alumno:</strong> Diego Alejandro Gomez Vazquez | No. de Control: 24308051280845 | 4-J Programación</p>
+    </footer>
+</body>
+</html>
